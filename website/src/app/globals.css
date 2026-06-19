@@ -33,26 +33,28 @@
   --font-mono: var(--font-jbmono), monospace;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--color-paper);
-}
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-paper);
+  }
 
-body {
-  color: var(--color-ink);
-  font-family: var(--font-sans);
-}
+  body {
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
 
-::selection {
-  background: var(--color-orange);
-  color: #fff;
-}
+  ::selection {
+    background: var(--color-orange);
+    color: #fff;
+  }
 
-a {
-  text-decoration: none;
-  color: inherit;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 .stroke-outline {
