@@ -26,12 +26,12 @@ export default function AddToCart({
 
   return (
     <div className="flex flex-wrap items-center gap-4">
-      <div className="flex items-center gap-4 bg-blush rounded-full px-2 py-2">
+      <div className="flex items-center gap-4 bg-pink rounded-full px-2 py-2">
         <button
           type="button"
           aria-label="Decrease quantity"
           onClick={() => setQty((q) => Math.max(1, q - 1))}
-          className="w-9 h-9 rounded-full bg-cream font-display text-lg cursor-pointer"
+          className="w-9 h-9 rounded-full bg-paper border border-ink/10 font-display text-lg cursor-pointer"
         >
           −
         </button>
@@ -40,7 +40,7 @@ export default function AddToCart({
           type="button"
           aria-label="Increase quantity"
           onClick={() => setQty((q) => q + 1)}
-          className="w-9 h-9 rounded-full bg-cream font-display text-lg cursor-pointer"
+          className="w-9 h-9 rounded-full bg-paper border border-ink/10 font-display text-lg cursor-pointer"
         >
           +
         </button>
@@ -48,7 +48,7 @@ export default function AddToCart({
       <button
         type="button"
         onClick={handleAdd}
-        className="bg-espresso text-blush px-8 py-4 rounded-full font-sans font-semibold text-sm cursor-pointer"
+        className="bg-ink text-pink px-8 py-4 rounded-full font-sans font-semibold text-sm cursor-pointer"
       >
         {added ? "Added to bag ✓" : `Add to bag — $${(price * qty).toFixed(2)}`}
       </button>

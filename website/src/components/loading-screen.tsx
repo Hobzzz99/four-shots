@@ -58,19 +58,19 @@ export default function LoadingScreen() {
       map: texture,
       metalness: 0.65,
       roughness: 0.22,
-      emissive: new THREE.Color("#4a1f5e"),
+      emissive: new THREE.Color("#582C83"),
       emissiveIntensity: 0.08,
     });
 
     const ball = new THREE.Mesh(geometry, material);
     scene.add(ball);
-    scene.add(new THREE.AmbientLight("#ffe2ef", 0.55));
+    scene.add(new THREE.AmbientLight("#FFC5E5", 0.55));
 
-    const pinkLight = new THREE.PointLight("#e8649a", 18, 12);
-    const purpleLight = new THREE.PointLight("#6b2d8c", 14, 12);
-    const creamRim = new THREE.PointLight("#f4ecde", 6, 12);
-    creamRim.position.set(-3, 1, 2);
-    scene.add(pinkLight, purpleLight, creamRim);
+    const accentLight = new THREE.PointLight("#F65E17", 18, 12);
+    const purpleLight = new THREE.PointLight("#C86CF7", 14, 12);
+    const paperRim = new THREE.PointLight("#FFFFFF", 6, 12);
+    paperRim.position.set(-3, 1, 2);
+    scene.add(accentLight, purpleLight, paperRim);
 
     let spinSpeed = 0.012;
     let clock = 0;
@@ -81,7 +81,7 @@ export default function LoadingScreen() {
       clock += 0.016;
       ball.rotation.y += spinSpeed;
       ball.rotation.x = Math.sin(clock * 0.3) * 0.08;
-      pinkLight.position.set(Math.cos(clock * 0.9) * 3, Math.sin(clock * 0.6) * 2, 2.4);
+      accentLight.position.set(Math.cos(clock * 0.9) * 3, Math.sin(clock * 0.6) * 2, 2.4);
       purpleLight.position.set(Math.cos(clock * 0.6 + Math.PI) * 3, Math.cos(clock * 0.5) * 2, -2.2);
       renderer.render(scene, camera);
     }
@@ -92,7 +92,7 @@ export default function LoadingScreen() {
       const idx = Math.min(3, Math.floor(pct / 25));
       if (tickerRef.current) tickerRef.current.textContent = TICKER_LINES[idx];
       pips.forEach((pip, i) => {
-        pip?.classList.toggle("bg-espresso", i <= idx && pct > i * 25);
+        pip?.classList.toggle("bg-ink", i <= idx && pct > i * 25);
       });
     }
 
@@ -145,32 +145,32 @@ export default function LoadingScreen() {
 
   return (
     <div
-      className={`fixed inset-0 z-[1000] flex items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_50%_38%,#f7c5da_0%,#f4ecde_72%)] ${
+      className={`fixed inset-0 z-[1000] flex items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_50%_38%,#FFC5E5_0%,#FFFFFF_72%)] ${
         wiping ? "animate-[wipe-out_1.25s_cubic-bezier(.65,0,.35,1)_forwards]" : ""
       }`}
     >
       <div className="relative z-[2] flex flex-col items-center gap-7">
         <div className="relative w-[230px] h-[230px]">
-          <div className="absolute -inset-[30%] rounded-full bg-[radial-gradient(circle,rgba(232,100,154,0.35)_0%,rgba(232,100,154,0)_70%)] blur-md -z-10" />
+          <div className="absolute -inset-[30%] rounded-full bg-[radial-gradient(circle,rgba(246,94,23,0.35)_0%,rgba(246,94,23,0)_70%)] blur-md -z-10" />
           <canvas ref={canvasRef} className="block w-full h-full" />
         </div>
 
-        <h1 className="font-display text-4xl sm:text-5xl leading-[0.95] text-center text-espresso">
+        <h1 className="font-display text-4xl sm:text-5xl leading-[0.95] text-center text-ink">
           Four shots.
           <br />
           <span className="stroke-outline">Nothing less.</span>
         </h1>
 
-        <div className="font-mono text-[11px] tracking-[0.12em] uppercase text-berry h-4 flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-hotpink shadow-[0_0_0_3px_rgba(232,100,154,0.25)]" />
+        <div className="font-mono text-[11px] tracking-[0.12em] uppercase text-coral h-4 flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-orange shadow-[0_0_0_3px_rgba(246,94,23,0.25)]" />
           <span ref={tickerRef}>{TICKER_LINES[0]}</span>
         </div>
 
         <div className="flex items-center gap-3.5">
-          <div className="w-[220px] h-2.5 bg-espresso rounded-full overflow-hidden">
-            <div ref={fillRef} className="h-full w-0 rounded-full bg-gradient-to-r from-hotpink to-rose" />
+          <div className="w-[220px] h-2.5 bg-ink rounded-full overflow-hidden">
+            <div ref={fillRef} className="h-full w-0 rounded-full bg-gradient-to-r from-orange to-pink" />
           </div>
-          <div ref={pctRef} className="font-mono text-[13px] text-espresso min-w-[38px] text-right">
+          <div ref={pctRef} className="font-mono text-[13px] text-ink min-w-[38px] text-right">
             0%
           </div>
         </div>
@@ -182,7 +182,7 @@ export default function LoadingScreen() {
               ref={(el) => {
                 pipRefs.current[i] = el;
               }}
-              className="w-2.5 h-2.5 rounded-full border-[1.5px] border-espresso"
+              className="w-2.5 h-2.5 rounded-full border-[1.5px] border-ink"
             />
           ))}
         </div>

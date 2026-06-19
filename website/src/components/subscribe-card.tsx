@@ -23,7 +23,7 @@ export default function SubscribeCard({ plan }: { plan: Plan }) {
       style={{ background: plan.bg, color: plan.fg }}
     >
       {plan.featured && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-espresso text-rose px-5 py-2 rounded-full font-mono text-[10px] tracking-[0.12em] uppercase whitespace-nowrap">
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-ink text-pink px-5 py-2 rounded-full font-mono text-[10px] tracking-[0.12em] uppercase whitespace-nowrap">
           ✺ Most picked
         </div>
       )}
@@ -47,7 +47,7 @@ export default function SubscribeCard({ plan }: { plan: Plan }) {
         type="button"
         onClick={() => setJoined(true)}
         disabled={joined}
-        className="w-full bg-espresso text-blush py-4 rounded-full font-sans font-semibold text-sm cursor-pointer disabled:opacity-80"
+        className="w-full bg-ink text-pink py-4 rounded-full font-sans font-semibold text-sm cursor-pointer disabled:opacity-80"
       >
         {joined ? "You're in ✓" : `Start ${plan.name.toLowerCase()} →`}
       </button>

@@ -35,9 +35,9 @@ export default async function ProductPage({
 
   return (
     <>
-      <section className="px-5 sm:px-12 py-16 bg-cream">
+      <section className="px-5 sm:px-12 py-16 bg-paper">
         <div className="max-w-7xl mx-auto">
-          <Link href="/shop" className="font-mono text-xs uppercase tracking-[0.1em] text-berry mb-10 inline-block">
+          <Link href="/shop" className="font-mono text-xs uppercase tracking-[0.1em] text-coral mb-10 inline-block">
             ← Back to shop
           </Link>
 
@@ -67,7 +67,7 @@ export default async function ProductPage({
             </div>
 
             <div>
-              <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.08em] text-berry mb-5">
+              <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.08em] text-coral mb-5">
                 <span>N° {product.batch}</span>
                 <span>·</span>
                 <span>◐ {product.kind}</span>
@@ -80,27 +80,27 @@ export default async function ProductPage({
               </div>
 
               <h1 className="font-display text-5xl sm:text-6xl leading-[0.95] mb-4">{product.name}</h1>
-              <div className="font-sans text-lg text-plum mb-6">
+              <div className="font-sans text-lg text-purple mb-6">
                 {product.origin} · {product.process}
               </div>
 
               <div className="flex gap-2 flex-wrap mb-8">
                 {product.notes.map((n) => (
-                  <span key={n} className="bg-espresso text-blush px-3 py-1.5 rounded-full font-mono text-[11px]">
+                  <span key={n} className="bg-ink text-pink px-3 py-1.5 rounded-full font-mono text-[11px]">
                     {n}
                   </span>
                 ))}
               </div>
 
-              <p className="font-sans text-base leading-relaxed text-espresso mb-8 max-w-xl">
+              <p className="font-sans text-base leading-relaxed text-ink mb-8 max-w-xl">
                 {product.description}
               </p>
 
-              <div className="bg-blush rounded-xl p-6 mb-8 max-w-sm">
-                <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-berry mb-3">— Recipe</div>
+              <div className="bg-pink rounded-xl p-6 mb-8 max-w-sm">
+                <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-coral mb-3">— Recipe</div>
                 <div className="font-display text-3xl leading-none">
                   {product.brew.ratio}
-                  <span className="text-base font-sans ml-3 text-grape">in {product.brew.time}</span>
+                  <span className="text-base font-sans ml-3 text-purple">in {product.brew.time}</span>
                 </div>
               </div>
 
@@ -117,9 +117,9 @@ export default async function ProductPage({
         </div>
       </section>
 
-      <section className="px-5 sm:px-12 py-20 bg-espresso text-cream">
+      <section className="px-5 sm:px-12 py-20 bg-ink text-paper">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-3xl sm:text-4xl text-blush mb-10">You might also like</h2>
+          <h2 className="font-display text-3xl sm:text-4xl text-pink mb-10">You might also like</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {related.map((p) => (
               <ProductCard key={p.slug} product={p} />

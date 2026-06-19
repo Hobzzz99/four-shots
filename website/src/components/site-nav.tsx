@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useCart } from "@/lib/cart-context";
+import Logo from "@/components/logo";
 
 const NAV_LINKS = [
   { href: "/shop", label: "Shop" },
@@ -41,25 +41,18 @@ export default function SiteNav() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b border-plum/10">
+    <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur-md border-b border-purple/10">
       <div className="flex items-center justify-between px-5 sm:px-12 py-3">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <Image
-            src="/images/fourshots-logo-transparent.png"
-            alt="FourShots"
-            width={44}
-            height={44}
-            className="h-11 w-11"
-            priority
-          />
-          <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-grape leading-tight hidden sm:block">
+          <Logo variant="micro" className="h-11 w-11" />
+          <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-purple leading-tight hidden sm:block">
             Specialty<br />Coffee Co.
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8 font-sans font-medium text-sm text-espresso">
+        <nav className="hidden md:flex items-center gap-8 font-sans font-medium text-sm text-ink">
           {NAV_LINKS.map((l) => (
-            <Link key={l.href} href={l.href} className="hover:text-berry transition-colors">
+            <Link key={l.href} href={l.href} className="hover:text-coral transition-colors">
               {l.label}
             </Link>
           ))}
@@ -68,10 +61,10 @@ export default function SiteNav() {
         <div className="flex items-center gap-4">
           <Link
             href="/cart"
-            className="flex items-center gap-2 bg-espresso text-blush px-4 py-2.5 rounded-full font-sans font-semibold text-sm"
+            className="flex items-center gap-2 bg-ink text-pink px-4 py-2.5 rounded-full font-sans font-semibold text-sm"
           >
             Bag
-            <span className="bg-hotpink text-espresso w-5 h-5 rounded-full flex items-center justify-center font-mono text-[11px] font-medium">
+            <span className="bg-orange text-ink w-5 h-5 rounded-full flex items-center justify-center font-mono text-[11px] font-medium">
               {count}
             </span>
           </Link>
@@ -81,14 +74,14 @@ export default function SiteNav() {
             className="md:hidden flex flex-col gap-1.5 p-2"
             onClick={() => setOpen((o) => !o)}
           >
-            <span className="w-5 h-[2px] bg-espresso" />
-            <span className="w-5 h-[2px] bg-espresso" />
+            <span className="w-5 h-[2px] bg-ink" />
+            <span className="w-5 h-[2px] bg-ink" />
           </button>
         </div>
       </div>
 
       {open && (
-        <nav className="md:hidden flex flex-col gap-4 px-6 pb-6 font-sans font-medium text-sm text-espresso">
+        <nav className="md:hidden flex flex-col gap-4 px-6 pb-6 font-sans font-medium text-sm text-ink">
           {NAV_LINKS.map((l) => (
             <Link key={l.href} href={l.href} onClick={() => setOpen(false)}>
               {l.label}
@@ -98,7 +91,7 @@ export default function SiteNav() {
       )}
 
       <div
-        className="bg-hotpink text-espresso py-2 overflow-hidden border-t border-espresso"
+        className="bg-orange text-ink py-2 overflow-hidden border-t border-ink"
         onMouseEnter={() => tweenRef.current?.pause()}
         onMouseLeave={() => tweenRef.current?.resume()}
       >

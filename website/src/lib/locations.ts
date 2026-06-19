@@ -8,17 +8,17 @@ export type Location = {
 
 export const locations: Location[] = [
   {
-    slug: "pink-lane",
-    name: "Roastery — Pink Lane",
-    address: "42 Pink Lane, East Side",
-    blurb: "Roasting Tuesdays — drop by for the smell alone.",
+    slug: "zamalek",
+    name: "Roastery — Zamalek",
+    address: "12 Brazil St, Zamalek, Cairo",
+    blurb: "Roasting Tuesdays — drop by for the smell, the playlist, and a round of bonding games.",
     hours: "07:00 — 17:00 · Mon–Sat",
   },
   {
-    slug: "old-town",
-    name: "The Bar — Old Town",
-    address: "9 Mercer St, Old Town",
-    blurb: "Espresso bar only — three stools and a view of the lever.",
+    slug: "maadi",
+    name: "The Bar — Maadi",
+    address: "9 Road 9, Maadi, Cairo",
+    blurb: "Espresso bar only — three stools, a lever machine, and a jazzy night every Friday.",
     hours: "08:00 — 16:00 · Daily",
   },
 ];

@@ -32,7 +32,7 @@ export default function NewsletterForm() {
 
   if (status === "done") {
     return (
-      <div className="bg-espresso text-blush rounded-full px-6 py-4 font-sans font-medium text-sm max-w-[460px]">
+      <div className="bg-ink text-pink rounded-full px-6 py-4 font-sans font-medium text-sm max-w-[460px]">
         You&rsquo;re on the list, {email}. First email lands Friday.
       </div>
     );
@@ -40,24 +40,24 @@ export default function NewsletterForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-2 max-w-[460px]">
-      <div className="flex gap-2 bg-blush p-2 rounded-full">
+      <div className="flex gap-2 bg-pink p-2 rounded-full">
         <input
           type="email"
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="hello@yourname.com"
-          className="flex-1 bg-transparent border-0 outline-none px-5 py-3.5 font-sans text-[15px] text-espresso min-w-0"
+          className="flex-1 bg-transparent border-0 outline-none px-5 py-3.5 font-sans text-[15px] text-ink min-w-0"
         />
         <button
           type="submit"
           disabled={status === "loading"}
-          className="bg-espresso text-blush border-0 px-6 py-3.5 rounded-full font-sans font-semibold text-sm cursor-pointer disabled:opacity-60 whitespace-nowrap"
+          className="bg-ink text-pink border-0 px-6 py-3.5 rounded-full font-sans font-semibold text-sm cursor-pointer disabled:opacity-60 whitespace-nowrap"
         >
           {status === "loading" ? "Pouring…" : "Pour me one →"}
         </button>
       </div>
-      {error && <p className="font-mono text-xs text-magenta px-2">{error}</p>}
+      {error && <p className="font-mono text-xs text-coral px-2">{error}</p>}
     </form>
   );
 }

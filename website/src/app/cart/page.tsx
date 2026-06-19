@@ -19,18 +19,18 @@ export default function CartPage() {
 
   if (orderNumber) {
     return (
-      <section className="px-5 sm:px-12 py-24 bg-cream min-h-[60vh] text-center">
+      <section className="px-5 sm:px-12 py-24 bg-paper min-h-[60vh] text-center">
         <div className="max-w-lg mx-auto">
-          <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-berry mb-4">Order confirmed</div>
+          <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-coral mb-4">Order confirmed</div>
           <h1 className="font-display text-5xl leading-[0.95] mb-6">
-            Order <span className="text-berry">{orderNumber}</span> is in.
+            Order <span className="text-coral">{orderNumber}</span> is in.
           </h1>
-          <p className="font-sans text-base text-plum mb-10">
+          <p className="font-sans text-base text-purple mb-10">
             This is a demo checkout — no payment was taken and nothing
             ships. Hook up a real payment provider when you&rsquo;re ready
             to take orders for real.
           </p>
-          <Link href="/shop" className="bg-espresso text-blush px-8 py-4 rounded-full font-sans font-semibold text-sm inline-block">
+          <Link href="/shop" className="bg-ink text-pink px-8 py-4 rounded-full font-sans font-semibold text-sm inline-block">
             Keep browsing →
           </Link>
         </div>
@@ -39,14 +39,14 @@ export default function CartPage() {
   }
 
   return (
-    <section className="px-5 sm:px-12 py-16 bg-cream min-h-[60vh]">
+    <section className="px-5 sm:px-12 py-16 bg-paper min-h-[60vh]">
       <div className="max-w-4xl mx-auto">
         <h1 className="font-display text-5xl leading-[0.95] mb-12">Your bag.</h1>
 
         {!ready ? null : lines.length === 0 ? (
           <div className="text-center py-20">
-            <p className="font-sans text-lg text-plum mb-8">Your bag is empty. Let&rsquo;s fix that.</p>
-            <Link href="/shop" className="bg-espresso text-blush px-8 py-4 rounded-full font-sans font-semibold text-sm">
+            <p className="font-sans text-lg text-purple mb-8">Your bag is empty. Let&rsquo;s fix that.</p>
+            <Link href="/shop" className="bg-ink text-pink px-8 py-4 rounded-full font-sans font-semibold text-sm">
               Shop beans →
             </Link>
           </div>
@@ -56,16 +56,16 @@ export default function CartPage() {
               {lines.map((line) => (
                 <div
                   key={line.slug}
-                  className="bg-blush rounded-xl p-5 flex flex-wrap items-center justify-between gap-4"
+                  className="bg-pink rounded-xl p-5 flex flex-wrap items-center justify-between gap-4"
                 >
                   <div className="min-w-[160px]">
                     <Link href={`/shop/${line.slug}`} className="font-display text-2xl leading-none">
                       {line.name}
                     </Link>
-                    <div className="font-mono text-[11px] text-grape mt-1">{line.weightG}g · whole bean</div>
+                    <div className="font-mono text-[11px] text-purple mt-1">{line.weightG}g · whole bean</div>
                   </div>
 
-                  <div className="flex items-center gap-3 bg-cream rounded-full px-2 py-2">
+                  <div className="flex items-center gap-3 bg-paper rounded-full px-2 py-2">
                     <button
                       type="button"
                       aria-label="Decrease quantity"
@@ -92,7 +92,7 @@ export default function CartPage() {
                   <button
                     type="button"
                     onClick={() => remove(line.slug)}
-                    className="font-mono text-[11px] uppercase tracking-[0.08em] text-berry underline cursor-pointer"
+                    className="font-mono text-[11px] uppercase tracking-[0.08em] text-coral underline cursor-pointer"
                   >
                     Remove
                   </button>
@@ -100,23 +100,23 @@ export default function CartPage() {
               ))}
             </div>
 
-            <div className="bg-espresso text-cream rounded-xl p-7 max-w-md ml-auto">
-              <div className="flex justify-between font-sans text-sm mb-2 text-rose">
+            <div className="bg-ink text-paper rounded-xl p-7 max-w-md ml-auto">
+              <div className="flex justify-between font-sans text-sm mb-2 text-pink">
                 <span>Subtotal</span>
                 <span>${subtotal.toFixed(2)}</span>
               </div>
-              <div className="flex justify-between font-sans text-sm mb-4 text-rose">
+              <div className="flex justify-between font-sans text-sm mb-4 text-pink">
                 <span>Shipping</span>
                 <span>{shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}</span>
               </div>
-              <div className="flex justify-between font-display text-2xl mb-6 text-blush border-t border-rose/20 pt-4">
+              <div className="flex justify-between font-display text-2xl mb-6 text-pink border-t border-pink/20 pt-4">
                 <span>Total</span>
                 <span>${total.toFixed(2)}</span>
               </div>
               <button
                 type="button"
                 onClick={handleCheckout}
-                className="w-full bg-hotpink text-espresso py-4 rounded-full font-sans font-semibold text-sm cursor-pointer"
+                className="w-full bg-orange text-ink py-4 rounded-full font-sans font-semibold text-sm cursor-pointer"
               >
                 Checkout →
               </button>

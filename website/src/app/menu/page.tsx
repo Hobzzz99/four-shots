@@ -1,6 +1,8 @@
+import Sunburst from "@/components/sunburst";
+
 export const metadata = {
   title: "Menu — FourShots Coffee Co.",
-  description: "Espresso, slow brews, and pink specials — what's on the bar.",
+  description: "Espresso, slow brews, and house specials — what's on the bar.",
 };
 
 const SECTIONS = [
@@ -30,22 +32,27 @@ const SECTIONS = [
     ],
   },
   {
-    title: "Pink Specials",
+    title: "House Specials",
     note: "— playful",
     items: [
-      { name: "Pink latte", detail: "beetroot · rose · oat", price: 6 },
+      { name: "Sunset latte", detail: "beetroot · hibiscus · oat", price: 6 },
       { name: "Strawberry matcha", price: 6.5 },
-      { name: "Plum espresso tonic", price: 7 },
+      { name: "Citrus espresso tonic", price: 7 },
     ],
   },
 ];
 
 export default function MenuPage() {
   return (
-    <section className="px-5 sm:px-12 py-16 bg-rose min-h-[60vh]">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-16">
+    <section className="relative px-5 sm:px-12 py-16 bg-pink min-h-[60vh] overflow-hidden">
+      <Sunburst
+        variant="asymmetric-v"
+        fill="var(--color-orange)"
+        className="hidden lg:block absolute top-10 -left-20 w-72 h-72 opacity-70"
+      />
+      <div className="relative max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-16">
         <div>
-          <div className="font-mono text-[11px] tracking-[0.12em] uppercase text-plum mb-6">— Drinks Board</div>
+          <div className="font-mono text-[11px] tracking-[0.12em] uppercase text-purple mb-6">— Drinks Board</div>
           <h1 className="font-display text-6xl sm:text-7xl leading-[0.9] mb-8">At the bar.</h1>
           <p className="font-sans text-lg leading-relaxed mb-10 max-w-sm">
             Espresso the way it should be — short, hot, honest. Milks are
@@ -53,8 +60,8 @@ export default function MenuPage() {
             roast.
           </p>
 
-          <div className="bg-espresso text-blush rounded-md p-6 max-w-sm">
-            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-rose mb-3">— Bar Hours</div>
+          <div className="bg-ink text-pink rounded-md p-6 max-w-sm">
+            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-pink mb-3">— Bar Hours</div>
             <div className="font-sans text-sm flex flex-col gap-2">
               <div className="flex justify-between">
                 <span>Mon — Fri</span>
@@ -64,7 +71,7 @@ export default function MenuPage() {
                 <span>Sat — Sun</span>
                 <span className="font-mono">08:00 — 16:00</span>
               </div>
-              <div className="flex justify-between text-hotpink">
+              <div className="flex justify-between text-orange">
                 <span>Roast day · Tue</span>
                 <span className="font-mono">07:00 — 14:00</span>
               </div>
@@ -72,29 +79,29 @@ export default function MenuPage() {
           </div>
         </div>
 
-        <div className="bg-cream rounded-md p-8 sm:p-10 shadow-xl">
+        <div className="bg-paper rounded-md p-8 sm:p-10 shadow-xl">
           {SECTIONS.map((section) => (
             <div key={section.title} className="mb-10 last:mb-0">
               <div className="flex items-baseline gap-4 mb-4 flex-wrap">
-                <h2 className="font-display text-3xl sm:text-4xl">{section.title}</h2>
-                <div className="flex-1 border-b-2 border-dotted border-berry min-w-[40px]" />
-                <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-berry">{section.note}</div>
+                <h2 className="font-display-alt text-3xl sm:text-4xl">{section.title}</h2>
+                <div className="flex-1 border-b-2 border-dotted border-coral min-w-[40px]" />
+                <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-coral">{section.note}</div>
               </div>
               <div className="font-sans text-base flex flex-col">
                 {section.items.map((item) => (
                   <div
                     key={item.name}
                     className={`flex justify-between items-baseline py-2.5 ${
-                      item.highlight ? "bg-blush px-3 -mx-3 rounded-md" : ""
+                      item.highlight ? "bg-pink px-3 -mx-3 rounded-md" : ""
                     }`}
                   >
                     <span>
                       <span className={item.highlight ? "font-bold" : ""}>{item.name}</span>
                       {item.detail && (
-                        <span className="font-mono text-[11px] text-grape ml-2">{item.detail}</span>
+                        <span className="font-mono text-[11px] text-purple ml-2">{item.detail}</span>
                       )}
                     </span>
-                    <span className="font-display text-xl text-berry">{item.price}</span>
+                    <span className="font-numeral text-2xl text-coral">{item.price}</span>
                   </div>
                 ))}
               </div>

@@ -3,17 +3,17 @@
 import { usePathname } from "next/navigation";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
-import Bean from "@/components/bean";
+import Sunburst from "@/components/sunburst";
 
 const COLUMNS = [
-  { bg: "#f7c5da", base: "#6b2d8c", crease: "#9c3568" },
-  { bg: "#ec9cc1", base: "#4a1f5e", crease: "#6b2d8c" },
-  { bg: "#e8649a", base: "#2a0f3a", crease: "#4a1f5e" },
-  { bg: "#b54d83", base: "#ffe2ef", crease: "#f7c5da" },
-  { bg: "#6b2d8c", base: "#f7c5da", crease: "#ec9cc1" },
-  { bg: "#4a1f5e", base: "#f4ecde", crease: "#e6d8c2" },
-  { bg: "#2a0f3a", base: "#ec9cc1", crease: "#e8649a" },
-  { bg: "#9c3568", base: "#ffe2ef", crease: "#f0a5c9" },
+  { bg: "#FFC5E5", accent: "#582C83" },
+  { bg: "#C86CF7", accent: "#1D1D1B" },
+  { bg: "#F65E17", accent: "#1D1D1B" },
+  { bg: "#FF585D", accent: "#FFFFFF" },
+  { bg: "#582C83", accent: "#FFC5E5" },
+  { bg: "#1D1D1B", accent: "#FFC5E5" },
+  { bg: "#8FD9A8", accent: "#1D1D1B" },
+  { bg: "#FCD300", accent: "#1D1D1B" },
 ];
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
@@ -68,19 +68,17 @@ export default function PageTransition({ children }: { children: React.ReactNode
             className="h-full flex-1 relative"
             style={{ background: col.bg }}
           >
-            <Bean
-              base={col.base}
-              crease={col.crease}
-              size={32}
-              rotate={-18}
-              style={{ position: "absolute", top: "22%", left: "50%", transform: "translateX(-50%) rotate(-18deg)" }}
+            <Sunburst
+              variant="spiky"
+              fill={col.accent}
+              className="absolute w-10 h-10"
+              style={{ top: "22%", left: "50%", transform: "translateX(-50%) rotate(-18deg)" }}
             />
-            <Bean
-              base={col.base}
-              crease={col.crease}
-              size={24}
-              rotate={12}
-              style={{ position: "absolute", top: "58%", left: "50%", transform: "translateX(-50%) rotate(12deg)" }}
+            <Sunburst
+              variant="rounded-spiky"
+              fill={col.accent}
+              className="absolute w-7 h-7 opacity-70"
+              style={{ top: "58%", left: "50%", transform: "translateX(-50%) rotate(12deg)" }}
             />
           </div>
         ))}

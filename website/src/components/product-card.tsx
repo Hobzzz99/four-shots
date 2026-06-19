@@ -24,7 +24,7 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <div
       className="rounded-2xl p-8 flex flex-col min-h-[540px] relative overflow-hidden"
-      style={{ background: product.cardBg, color: "#2a0f3a" }}
+      style={{ background: product.cardBg, color: product.textColor }}
     >
       <div className="flex justify-between font-mono text-[11px] tracking-[0.08em] uppercase opacity-70">
         <span>N° {product.batch}</span>
@@ -66,7 +66,7 @@ export default function ProductCard({ product }: { product: Product }) {
           {product.notes.map((n) => (
             <span
               key={n}
-              className="bg-espresso text-blush px-2.5 py-1 rounded-full font-mono text-[10px]"
+              className="bg-ink text-pink px-2.5 py-1 rounded-full font-mono text-[10px]"
             >
               {n}
             </span>
@@ -82,7 +82,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <button
             type="button"
             onClick={handleAdd}
-            className="bg-espresso text-blush px-5 py-3 rounded-full font-sans font-semibold text-sm cursor-pointer"
+            className="bg-ink text-pink px-5 py-3 rounded-full font-sans font-semibold text-sm cursor-pointer"
           >
             {added ? "Added ✓" : "Add to bag →"}
           </button>

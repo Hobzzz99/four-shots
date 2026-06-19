@@ -24,8 +24,8 @@ export default function ShopGrid({ products }: { products: Product[] }) {
             onClick={() => setKind(k)}
             className={`px-5 py-2.5 rounded-full font-sans font-semibold text-sm border-[1.5px] cursor-pointer ${
               kind === k
-                ? "bg-espresso text-blush border-espresso"
-                : "bg-transparent text-espresso border-espresso/30"
+                ? "bg-ink text-pink border-ink"
+                : "bg-transparent text-ink border-ink/30"
             }`}
           >
             {k}
@@ -40,7 +40,7 @@ export default function ShopGrid({ products }: { products: Product[] }) {
       </div>
 
       {filtered.length === 0 && (
-        <p className="font-sans text-plum py-20 text-center">No bags in this category right now.</p>
+        <p className="font-sans text-purple py-20 text-center">No bags in this category right now.</p>
       )}
     </div>
   );

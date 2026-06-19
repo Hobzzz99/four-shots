@@ -13,8 +13,8 @@ const PLANS: Plan[] = [
     price: 24,
     blurb: "For one drinker, one method. We pick the week's best for your brew.",
     features: ["250g whole bean", "Tasting card included", "Every 14 days", "Free shipping"],
-    bg: "#ffe2ef",
-    fg: "#2a0f3a",
+    bg: "#FFC5E5",
+    fg: "#1D1D1B",
   },
   {
     id: "pair",
@@ -29,8 +29,8 @@ const PLANS: Plan[] = [
       "Brew guide cards + free shipping",
     ],
     featured: true,
-    bg: "#e8649a",
-    fg: "#2a0f3a",
+    bg: "#F65E17",
+    fg: "#1D1D1B",
   },
   {
     id: "four-shots",
@@ -44,20 +44,20 @@ const PLANS: Plan[] = [
       "First-dibs micro-lots",
       "Members-only Tuesday cupping",
     ],
-    bg: "#4a1f5e",
-    fg: "#ffe2ef",
+    bg: "#582C83",
+    fg: "#FFC5E5",
   },
 ];
 
 export default function SubscribePage() {
   return (
-    <section className="px-5 sm:px-12 py-20 bg-cream min-h-[60vh]">
+    <section className="px-5 sm:px-12 py-20 bg-paper min-h-[60vh]">
       <div className="max-w-3xl mx-auto text-center mb-16">
-        <div className="font-mono text-[11px] tracking-[0.12em] uppercase text-berry mb-4">— Subscribe</div>
+        <div className="font-mono text-[11px] tracking-[0.12em] uppercase text-coral mb-4">— Subscribe</div>
         <h1 className="font-display text-6xl sm:text-7xl leading-[0.92] mb-6">
-          Beans on <span className="text-berry">repeat.</span>
+          Beans on <span className="text-coral">repeat.</span>
         </h1>
-        <p className="font-sans text-lg text-plum">
+        <p className="font-sans text-lg text-purple">
           Pick your shot count, pick your cadence. We roast and ship the
           freshest origins of the week. Skip, pause, or change anytime.
         </p>

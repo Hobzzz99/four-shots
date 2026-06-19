@@ -1,39 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --color-cream: #f4ecde;
-  --color-buff: #e6d8c2;
-  --color-blush: #ffe2ef;
-  --color-petal: #f7c5da;
-  --color-bubblegum: #f0a5c9;
-  --color-rose: #ec9cc1;
-  --color-hotpink: #e8649a;
-  --color-berry: #b54d83;
-  --color-magenta: #9c3568;
-  --color-grape: #6b2d8c;
-  --color-plum: #4a1f5e;
-  --color-aubergine: #4a1f5e;
-  --color-espresso: #2a0f3a;
-  --color-ink: #1a0a24;
+  --color-ink: #1d1d1b;
+  --color-paper: #ffffff;
+  --color-orange: #f65e17;
+  --color-yellow: #fcd300;
+  --color-purple: #582c83;
+  --color-purple-light: #c86cf7;
+  --color-pink: #ffc5e5;
+  --color-blue: #4570b7;
+  --color-mint: #8fd9a8;
+  --color-coral: #ff585d;
 }
 
 @theme inline {
-  --color-cream: var(--color-cream);
-  --color-buff: var(--color-buff);
-  --color-blush: var(--color-blush);
-  --color-petal: var(--color-petal);
-  --color-bubblegum: var(--color-bubblegum);
-  --color-rose: var(--color-rose);
-  --color-hotpink: var(--color-hotpink);
-  --color-berry: var(--color-berry);
-  --color-magenta: var(--color-magenta);
-  --color-grape: var(--color-grape);
-  --color-plum: var(--color-plum);
-  --color-espresso: var(--color-espresso);
   --color-ink: var(--color-ink);
+  --color-paper: var(--color-paper);
+  --color-orange: var(--color-orange);
+  --color-yellow: var(--color-yellow);
+  --color-purple: var(--color-purple);
+  --color-purple-light: var(--color-purple-light);
+  --color-pink: var(--color-pink);
+  --color-blue: var(--color-blue);
+  --color-mint: var(--color-mint);
+  --color-coral: var(--color-coral);
 
-  --font-display: var(--font-bagel), cursive;
-  --font-sans: var(--font-geist), system-ui, sans-serif;
+  --font-display: var(--font-archivo-black), sans-serif;
+  --font-display-alt: var(--font-manicotti), sans-serif;
+  --font-serif-display: var(--font-big-shoulders), serif;
+  --font-numeral: var(--font-tiny5x3), sans-serif;
+  --font-sans: var(--font-ppmori), system-ui, sans-serif;
   --font-mono: var(--font-jbmono), monospace;
 }
 
@@ -41,16 +37,16 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--color-cream);
+  background: var(--color-paper);
 }
 
 body {
-  color: var(--color-espresso);
+  color: var(--color-ink);
   font-family: var(--font-sans);
 }
 
 ::selection {
-  background: var(--color-hotpink);
+  background: var(--color-orange);
   color: #fff;
 }
 
@@ -60,9 +56,23 @@ a {
 }
 
 .stroke-outline {
-  -webkit-text-stroke: 6px var(--color-plum);
+  -webkit-text-stroke: 6px var(--color-purple);
   paint-order: stroke fill;
   color: #fff;
+}
+
+.stroke-outline-coral {
+  -webkit-text-stroke: 6px var(--color-coral);
+  paint-order: stroke fill;
+  color: #fff;
+}
+
+.halftone-overlay {
+  background-image: url("/images/textures/halftone-scan.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }
 
 @keyframes wipe-out {
