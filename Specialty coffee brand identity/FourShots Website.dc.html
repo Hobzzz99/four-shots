@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&amp;family=Geist:wght@300..700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #f4ecde; }
+  ::selection { background: #e8649a; color: #fff; }
+  a { text-decoration: none; color: inherit; }
+</style>
+</helmet>
+
+<div style="background: #f4ecde; font-family: 'Geist', system-ui, sans-serif; color: #2a0f3a; min-width: 1440px;">
+
+<!-- ============ NAV ============ -->
+<nav data-screen-label="Nav" style="position: sticky; top: 0; z-index: 50; background: rgba(244, 236, 222, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(74, 31, 94, 0.12);">
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 48px; width: 1344px; height: 38px">
+    <!-- Logo lockup -->
+    <div style="display: flex; align-items: center; gap: 12px; width: 197px; height: 69px">
+      
+      <img src="assets/fourshots-logo-transparent.png" style="height: 69px; width: 69px; align-self: flex-start"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #6b2d8c; line-height: 1.3; padding-top: 8px; padding-bottom: 8px; padding-left: 22px; padding-right: 22px">Specialty<br>Coffee Co.</div>
+    </div>
+
+    <!-- Nav links -->
+    <div style="display: flex; align-items: center; gap: 36px; font-family: 'Geist', sans-serif; font-weight: 500; font-size: 14px; color: #2a0f3a;">
+      <a href="#shop" style="display: flex; align-items: center; gap: 6px;">Shop <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #b54d83;">↗</span></a>
+      <a href="#menu">Menu</a>
+      <a href="#subscribe">Subscribe</a>
+      <a href="#journal">Journal</a>
+      <a href="#visit">Visit</a>
+    </div>
+
+    <!-- Right side -->
+    <div style="display: flex; align-items: center; gap: 16px; font-family: 'Geist', sans-serif; font-weight: 500; font-size: 14px;">
+      <a href="#" style="color: #4a1f5e;">Account</a>
+      <a href="#" style="display: flex; align-items: center; gap: 10px; background: #2a0f3a; color: #ffe2ef; padding: 10px 18px; border-radius: 999px;">
+        Bag
+        <span style="background: #e8649a; color: #2a0f3a; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;">2</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Marquee strip -->
+  <div style="background: #e8649a; color: #2a0f3a; padding: 8px 0; overflow: hidden; border-top: 1px solid #2a0f3a;">
+    <div style="display: flex; gap: 40px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; padding-left: 48px;">
+      <span>✺ New roast — Gesha, Boquete — drops Friday 06.21</span>
+      <span>◐</span>
+      <span>Free shipping over $40</span>
+      <span>◐</span>
+      <span>Fourth espresso always on us — ask the bar</span>
+      <span>◐</span>
+      <span>Roasted Tuesdays · shipped Wednesdays</span>
+      <span>◐</span>
+      <span>✺ New roast — Gesha, Boquete — drops Friday 06.21</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section data-screen-label="Hero" style="position: relative; padding: 64px 48px 96px; background: linear-gradient(180deg, #f7c5da 0%, #f0a5c9 100%); overflow: hidden;">
+
+  <!-- Decorative dots -->
+  <div style="position: absolute; top: 120px; left: 80px; width: 36px; height: 36px; border-radius: 50%; background: #e8649a;"></div>
+  <div style="position: absolute; top: 220px; right: 200px; width: 22px; height: 22px; border-radius: 50%; background: #6b2d8c;"></div>
+  <div style="position: absolute; bottom: 180px; left: 280px; width: 28px; height: 28px; border-radius: 50%; background: #ffe2ef;"></div>
+  <div style="position: absolute; bottom: 80px; right: 80px; width: 44px; height: 44px; border-radius: 50%; background: #4a1f5e;"></div>
+
+  <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center; position: relative; z-index: 2;">
+    <!-- Left: hero copy -->
+    <div>
+      <div style="display: inline-flex; align-items: center; gap: 8px; background: #2a0f3a; color: #ec9cc1; padding: 8px 16px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 32px;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: #e8649a; box-shadow: 0 0 0 4px rgba(232, 100, 154, 0.3);"></span>
+        Currently pulling — Ethiopia Halo Beriti
+      </div>
+
+      <h1 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 140px; line-height: 0.94; letter-spacing: -0.015em; margin: 0 0 32px; color: #2a0f3a;">
+        Four shots.<br>
+        <span style="color: #ffffff; -webkit-text-stroke: 6px #4a1f5e; paint-order: stroke fill; text-shadow: 8px 8px 0 #4a1f5e;">Nothing less.</span>
+      </h1>
+
+      <p style="font-family: 'Geist', sans-serif; font-size: 20px; line-height: 1.5; max-width: 520px; color: #2a0f3a; margin: 0 0 40px;">
+        A pink-soaked specialty roastery in the corner of your morning. Small batches, tight ratios, and a barista who'll happily pull you a fourth.
+      </p>
+
+      <div style="display: flex; gap: 14px;">
+        <a href="#shop" style="background: #2a0f3a; color: #ffe2ef; padding: 18px 32px; border-radius: 999px; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 10px;">
+          Shop beans <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px;">→</span>
+        </a>
+        <a href="#visit" style="background: transparent; color: #2a0f3a; padding: 18px 32px; border-radius: 999px; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 15px; border: 1.5px solid #2a0f3a; display: inline-flex; align-items: center; gap: 10px;">
+          Find the bar <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px;">↗</span>
+        </a>
+      </div>
+
+      <!-- Trust strip -->
+      <div style="display: flex; gap: 40px; margin-top: 56px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4a1f5e;">
+        <div><div style="font-family: 'Bagel Fat One', cursive; font-size: 36px; color: #2a0f3a; line-height: 1;">14</div><div style="margin-top: 6px;">single<br>origins / yr</div></div>
+        <div><div style="font-family: 'Bagel Fat One', cursive; font-size: 36px; color: #2a0f3a; line-height: 1;">2.4k</div><div style="margin-top: 6px;">subscribers<br>and counting</div></div>
+        <div><div style="font-family: 'Bagel Fat One', cursive; font-size: 36px; color: #2a0f3a; line-height: 1;">86+</div><div style="margin-top: 6px;">avg cupping<br>score</div></div>
+      </div>
+    </div>
+
+    <!-- Right: hero sticker -->
+    <div style="position: relative; aspect-ratio: 1 / 1;">
+      <!-- Backdrop sticker bg -->
+      <div style="position: absolute; inset: 8% 8% 8% 8%; background: radial-gradient(circle at 30% 30%, #ffe2ef 0%, #f0a5c9 70%); border-radius: 50%; box-shadow: 0 40px 80px -24px rgba(74, 31, 94, 0.4);"></div>
+
+      <!-- Logo with puffy treatment -->
+      <img src="assets/fourshots-logo.jpeg" style="position: relative; width: 100%; filter: drop-shadow(0 14px 0 #4a1f5e) drop-shadow(0 28px 24px rgba(42, 15, 48, 0.35)); transform: rotate(-3deg);">
+
+      <!-- Floating badge -->
+      <div style="position: absolute; top: 40px; right: 0; width: 120px; height: 120px; background: #e8649a; border-radius: 50%; display: flex; align-items: center; justify-content: center; transform: rotate(12deg); box-shadow: 0 12px 24px -8px rgba(74, 31, 94, 0.5); text-align: center;">
+        <div>
+          <div style="font-family: 'Bagel Fat One', cursive; font-size: 32px; color: #f4ecde; line-height: 0.9;">new<br>roast</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #2a0f3a; letter-spacing: 0.1em; margin-top: 4px;">FRI 06.21</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section data-screen-label="About" id="about" style="padding: 120px 48px; background: #f4ecde;">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+    <!-- Image placeholder -->
+    <div style="position: relative; aspect-ratio: 4 / 5; background: #6b2d8c; border-radius: 4px; overflow: hidden; box-shadow: 0 32px 64px -24px rgba(74, 31, 94, 0.3);">
+      <!-- Striped placeholder -->
+      <div style="position: absolute; inset: 0; background: repeating-linear-gradient(45deg, #6b2d8c 0 6px, #5a2477 6px 12px);"></div>
+      <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(247,197,218,0.15), transparent 60%);"></div>
+
+      <!-- Caption -->
+      <div style="position: absolute; bottom: 24px; left: 24px; right: 24px; display: flex; justify-content: space-between; align-items: end; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #ec9cc1;">
+        <span>◐ PHOTO — barista pulling shot, 3:4</span>
+        <span>img/01</span>
+      </div>
+
+      <!-- Floating sticker -->
+      <div style="position: absolute; top: 32px; right: -24px; background: #ffe2ef; padding: 16px 24px; border-radius: 4px; transform: rotate(4deg); box-shadow: 0 12px 24px -8px rgba(42, 15, 48, 0.4); font-family: 'Bagel Fat One', cursive; font-size: 28px; color: #2a0f3a; line-height: 1;">since 2021</div>
+    </div>
+
+    <!-- Copy -->
+    <div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #b54d83; margin-bottom: 24px;">— § Our deal</div>
+      <h2 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 84px; line-height: 1.0; letter-spacing: -0.005em; margin: 0 0 32px; color: #2a0f3a;">
+        Four shots is<br>a number, not<br>a <span style="color: #b54d83;">slogan.</span>
+      </h2>
+      <p style="font-family: 'Geist', sans-serif; font-size: 18px; line-height: 1.6; color: #4a2548; margin: 0 0 24px; max-width: 520px;">
+        We started in a 40-square-meter shop with one La Marzocco, one fridge full of oat, and a rule: if the fourth shot doesn't taste as good as the first, we're not serving it. That's still the rule.
+      </p>
+      <p style="font-family: 'Geist', sans-serif; font-size: 18px; line-height: 1.6; color: #4a2548; margin: 0 0 40px; max-width: 520px;">
+        Today we roast 14 single origins a year, dial in daily, and ship to wherever you're brewing. Same rule. Pinker walls.
+      </p>
+
+      <a href="#" style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 15px; color: #2a0f3a; border-bottom: 2px solid #e8649a; padding-bottom: 4px;">
+        Read the full story <span style="font-family: 'JetBrains Mono', monospace;">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOP ============ -->
+<section data-screen-label="Shop" id="shop" style="padding: 120px 48px; background: #2a0f3a; color: #f4ecde;">
+  <!-- Section header -->
+  <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 64px;">
+    <div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #ec9cc1; margin-bottom: 24px;">— § 02 / The Shop</div>
+      <h2 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 96px; line-height: 0.95; letter-spacing: -0.005em; margin: 0; color: #ffe2ef;">
+        On the bar<br>this <span style="color: #e8649a;">week.</span>
+      </h2>
+    </div>
+    <div style="text-align: right;">
+      <p style="font-family: 'Geist', sans-serif; font-size: 16px; line-height: 1.6; color: #d4b8c8; max-width: 320px; margin: 0 0 16px;">
+        Three single origins, roasted Tuesday, shipped Wednesday. Drink within 28 days.
+      </p>
+      <a href="#" style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 14px; color: #ec9cc1; letter-spacing: 0.04em;">
+        See all 14 origins <span style="font-family: 'JetBrains Mono', monospace;">→</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Bag cards -->
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+    <!-- Card 1 -->
+    <div style="background: #f7c5da; color: #2a0f3a; border-radius: 8px; padding: 32px; display: flex; flex-direction: column; min-height: 560px; position: relative; overflow: hidden;">
+      <!-- Top meta -->
+      <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #6b2d8c;">
+        <span>N° 0427-A</span>
+        <span>◐ ESPRESSO</span>
+      </div>
+
+      <!-- Bag -->
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center; margin: 24px 0;">
+        <div style="width: 200px; height: 280px; background: #e6d8c2; border-radius: 6px 6px 12px 12px; position: relative; box-shadow: 0 16px 32px -12px rgba(74, 31, 94, 0.4); padding: 24px 16px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="position: absolute; top: -6px; left: 16px; right: 16px; height: 10px; background: #4a1f5e; border-radius: 3px;"></div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: #6b2d8c;">FourShots / 250g</div>
+          <div style="text-align: center;">
+            <img src="assets/fourshots-logo.jpeg" style="width: 100%; mix-blend-mode: multiply;">
+          </div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 8px; color: #6b2d8c;">GESHA · BOQUETE</div>
+        </div>
+      </div>
+
+      <!-- Card info -->
+      <div>
+        <h3 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 40px; line-height: 1; margin: 0 0 4px; color: #2a0f3a;">Gesha</h3>
+        <div style="font-family: 'Geist', sans-serif; font-size: 14px; color: #6b2d8c; margin-bottom: 16px;">Boquete, Panama · Anaerobic Natural</div>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;">
+          <span style="background: #2a0f3a; color: #ffe2ef; padding: 4px 10px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.05em;">raspberry</span>
+          <span style="background: #2a0f3a; color: #ffe2ef; padding: 4px 10px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.05em;">rose</span>
+          <span style="background: #2a0f3a; color: #ffe2ef; padding: 4px 10px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.05em;">bergamot</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-family: 'Bagel Fat One', cursive; font-size: 32px; color: #2a0f3a; line-height: 1;">$32</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #6b2d8c;">250g · whole bean</div>
+          </div>
+          <a href="#" style="background: #2a0f3a; color: #ffe2ef; padding: 14px 22px; border-radius: 999px; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 13px;">Add to bag →</a>
+        </div>
+      </div>
+
+      <!-- Sticker badge -->
+      <div style="position: absolute; top: 16px; right: -8px; background: #e8649a; color: #2a0f3a; padding: 6px 14px; transform: rotate(6deg); font-family: 'Bagel Fat One', cursive; font-size: 18px; box-shadow: 0 6px 12px -4px rgba(0,0,0,0.3);">new!</div>
+    </div>
+
+    <!-- Card 2 -->
+    <div style="background: #ec9cc1; color: #2a0f3a; border-radius: 8px; padding: 32px; display: flex; flex-direction: column; min-height: 560px; position: relative; overflow: hidden;">
+      <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4a1f5e;">
+        <span>N° 0419-B</span>
+        <span>◐ FILTER</span>
+      </div>
+
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center; margin: 24px 0;">
+        <div style="width: 200px; height: 280px; background: #f4ecde; border-radius: 6px 6px 12px 12px; position: relative; box-shadow: 0 16px 32px -12px rgba(74, 31, 94, 0.4); padding: 24px 16px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="position: absolute; top: -6px; left: 16px; right: 16px; height: 10px; background: #4a1f5e; border-radius: 3px;"></div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: #6b2d8c;">FourShots / 250g</div>
+          <div style="text-align: center;">
+            <img src="assets/fourshots-logo.jpeg" style="width: 100%; mix-blend-mode: multiply;">
+          </div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 8px; color: #6b2d8c;">HALO BERITI · YIRG.</div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 40px; line-height: 1; margin: 0 0 4px; color: #2a0f3a;">Halo Beriti</h3>
+        <div style="font-family: 'Geist', sans-serif; font-size: 14px; color: #4a1f5e; margin-bottom: 16px;">Yirgacheffe, Ethiopia · Washed</div>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;">
+          <span style="background: #2a0f3a; color: #ffe2ef; padding: 4px 10px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.05em;">peach</span>
+          <span style="background: #2a0f3a; color: #ffe2ef; padding: 4px 10px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.05em;">jasmine</span>
+          <span style="background: #2a0f3a; color: #ffe2ef; padding: 4px 10px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.05em;">black tea</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-family: 'Bagel Fat One', cursive; font-size: 32px; color: #2a0f3a; line-height: 1;">$26</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #4a1f5e;">250g · whole bean</div>
+          </div>
+          <a href="#" style="background: #2a0f3a; color: #ffe2ef; padding: 14px 22px; border-radius: 999px; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 13px;">Add to bag →</a>
+        </div>
+      </div>
+
+      <div style="position: absolute; top: 16px; right: -8px; background: #4a1f5e; color: #ffe2ef; padding: 6px 14px; transform: rotate(6deg); font-family: 'Bagel Fat One', cursive; font-size: 18px; box-shadow: 0 6px 12px -4px rgba(0,0,0,0.3);">house favourite</div>
+    </div>
+
+    <!-- Card 3 -->
+    <div style="background: #b54d83; color: #ffe2ef; border-radius: 8px; padding: 32px; display: flex; flex-direction: column; min-height: 560px; position: relative; overflow: hidden;">
+      <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #ffe2ef;">
+        <span>N° 0411-C</span>
+        <span>◐ BLEND</span>
+      </div>
+
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center; margin: 24px 0;">
+        <div style="width: 200px; height: 280px; background: #2a0f3a; border-radius: 6px 6px 12px 12px; position: relative; box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.5); padding: 24px 16px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="position: absolute; top: -6px; left: 16px; right: 16px; height: 10px; background: #e8649a; border-radius: 3px;"></div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: #ec9cc1;">FourShots / 250g</div>
+          <div style="text-align: center;">
+            <img src="assets/fourshots-logo.jpeg" style="width: 100%; mix-blend-mode: screen; filter: contrast(1.4);">
+          </div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 8px; color: #ec9cc1;">FOUR-WAY BLEND</div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 40px; line-height: 1; margin: 0 0 4px;">Four-Way</h3>
+        <div style="font-family: 'Geist', sans-serif; font-size: 14px; color: #ffe2ef; opacity: 0.85; margin-bottom: 16px;">House blend · 4 origins, 1 chord</div>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;">
+          <span style="background: #2a0f3a; color: #ffe2ef; padding: 4px 10px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.05em;">cocoa</span>
+          <span style="background: #2a0f3a; color: #ffe2ef; padding: 4px 10px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.05em;">brown sugar</span>
+          <span style="background: #2a0f3a; color: #ffe2ef; padding: 4px 10px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.05em;">cherry</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-family: 'Bagel Fat One', cursive; font-size: 32px; line-height: 1;">$22</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; opacity: 0.85;">250g · whole bean</div>
+          </div>
+          <a href="#" style="background: #ffe2ef; color: #2a0f3a; padding: 14px 22px; border-radius: 999px; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 13px;">Add to bag →</a>
+        </div>
+      </div>
+
+      <div style="position: absolute; top: 16px; right: -8px; background: #f4ecde; color: #2a0f3a; padding: 6px 14px; transform: rotate(6deg); font-family: 'Bagel Fat One', cursive; font-size: 18px; box-shadow: 0 6px 12px -4px rgba(0,0,0,0.3);">always on</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section data-screen-label="Menu" id="menu" style="padding: 120px 48px; background: #ec9cc1;">
+  <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px;">
+    <!-- Left: title -->
+    <div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #4a1f5e; margin-bottom: 24px;">— § 03 / Drinks Board</div>
+      <h2 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 120px; line-height: 0.9; letter-spacing: -0.01em; margin: 0 0 32px; color: #2a0f3a;">
+        At the<br>bar.
+      </h2>
+      <p style="font-family: 'Geist', sans-serif; font-size: 17px; line-height: 1.6; color: #2a0f3a; max-width: 360px; margin: 0 0 40px;">
+        Espresso the way it should be — short, hot, honest. Milks are oat by default, dairy on request. Specials change with the roast.
+      </p>
+
+      <!-- Hours block -->
+      <div style="background: #2a0f3a; color: #ffe2ef; padding: 24px; border-radius: 4px; max-width: 360px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #ec9cc1; margin-bottom: 12px;">— Bar Hours</div>
+        <div style="font-family: 'Geist', sans-serif; font-size: 14px; line-height: 1.8;">
+          <div style="display: flex; justify-content: space-between;"><span>Mon — Fri</span><span style="font-family: 'JetBrains Mono', monospace;">07:00 — 17:00</span></div>
+          <div style="display: flex; justify-content: space-between;"><span>Sat — Sun</span><span style="font-family: 'JetBrains Mono', monospace;">08:00 — 16:00</span></div>
+          <div style="display: flex; justify-content: space-between; color: #e8649a;"><span>Roast day · Tue</span><span style="font-family: 'JetBrains Mono', monospace;">07:00 — 14:00</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: menu -->
+    <div style="background: #f4ecde; padding: 40px; border-radius: 4px; box-shadow: 0 24px 48px -16px rgba(74, 31, 94, 0.3);">
+      <!-- Espresso -->
+      <div style="margin-bottom: 32px;">
+        <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px;">
+          <h3 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 36px; margin: 0; color: #2a0f3a;">Espresso</h3>
+          <div style="flex: 1; border-bottom: 2px dotted #b54d83;"></div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #b54d83;">— short, hot</div>
+        </div>
+        <div style="font-family: 'Geist', sans-serif; font-size: 16px; line-height: 2; color: #2a0f3a;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;"><span>Espresso <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6b2d8c; margin-left: 6px;">18g → 38g / 26s</span></span><span style="font-family: 'Bagel Fat One', cursive; font-size: 22px; color: #b54d83;">4</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline;"><span>Ristretto</span><span style="font-family: 'Bagel Fat One', cursive; font-size: 22px; color: #b54d83;">4</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline;"><span>Cortado</span><span style="font-family: 'Bagel Fat One', cursive; font-size: 22px; color: #b54d83;">5</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline;"><span>Flat white</span><span style="font-family: 'Bagel Fat One', cursive; font-size: 22px; color: #b54d83;">5.5</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; background: #ffe2ef; padding: 4px 12px; margin: 0 -12px; border-radius: 4px;"><span><b>Four Shots ✺</b> <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6b2d8c; margin-left: 6px;">four ristrettos, on the house if it's your 4th</span></span><span style="font-family: 'Bagel Fat One', cursive; font-size: 22px; color: #b54d83;">7</span></div>
+        </div>
+      </div>
+
+      <!-- Slow / Filter -->
+      <div style="margin-bottom: 32px;">
+        <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px;">
+          <h3 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 36px; margin: 0; color: #2a0f3a;">Slow</h3>
+          <div style="flex: 1; border-bottom: 2px dotted #b54d83;"></div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #b54d83;">— 4 minutes give or take</div>
+        </div>
+        <div style="font-family: 'Geist', sans-serif; font-size: 16px; line-height: 2; color: #2a0f3a;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;"><span>V60</span><span style="font-family: 'Bagel Fat One', cursive; font-size: 22px; color: #b54d83;">6</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline;"><span>Aeropress</span><span style="font-family: 'Bagel Fat One', cursive; font-size: 22px; color: #b54d83;">6</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline;"><span>Cold brew · on tap</span><span style="font-family: 'Bagel Fat One', cursive; font-size: 22px; color: #b54d83;">5.5</span></div>
+        </div>
+      </div>
+
+      <!-- Specials -->
+      <div>
+        <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px;">
+          <h3 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 36px; margin: 0; color: #2a0f3a;">Pink Specials</h3>
+          <div style="flex: 1; border-bottom: 2px dotted #b54d83;"></div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #b54d83;">— playful</div>
+        </div>
+        <div style="font-family: 'Geist', sans-serif; font-size: 16px; line-height: 2; color: #2a0f3a;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;"><span>Pink latte <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6b2d8c; margin-left: 6px;">beetroot · rose · oat</span></span><span style="font-family: 'Bagel Fat One', cursive; font-size: 22px; color: #b54d83;">6</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline;"><span>Strawberry matcha</span><span style="font-family: 'Bagel Fat One', cursive; font-size: 22px; color: #b54d83;">6.5</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline;"><span>Plum espresso tonic</span><span style="font-family: 'Bagel Fat One', cursive; font-size: 22px; color: #b54d83;">7</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUBSCRIPTION ============ -->
+<section data-screen-label="Subscribe" id="subscribe" style="padding: 120px 48px; background: #f4ecde; position: relative;">
+  <!-- Background sticker logos -->
+  <div style="position: absolute; top: 80px; right: -60px; opacity: 0.08; transform: rotate(-12deg);">
+    <img src="assets/fourshots-logo.jpeg" style="width: 400px;">
+  </div>
+
+  <div style="position: relative; z-index: 2;">
+    <div style="text-align: center; margin-bottom: 64px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #b54d83; margin-bottom: 16px;">— § 04 / Subscribe</div>
+      <h2 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 120px; line-height: 0.9; letter-spacing: -0.01em; margin: 0 0 24px; color: #2a0f3a;">
+        Beans on <span style="color: #b54d83;">repeat.</span>
+      </h2>
+      <p style="font-family: 'Geist', sans-serif; font-size: 18px; line-height: 1.6; color: #4a2548; max-width: 540px; margin: 0 auto;">
+        Pick your shot count, pick your cadence. We roast and ship the freshest origins of the week. Skip, pause, or change anytime.
+      </p>
+    </div>
+
+    <!-- Plan cards -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto;">
+      <!-- Solo -->
+      <div style="background: #ffe2ef; border-radius: 8px; padding: 36px 28px; position: relative;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #b54d83; margin-bottom: 12px;">— 1 bag / fortnight</div>
+        <h3 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 56px; line-height: 1; margin: 0 0 8px; color: #2a0f3a;">Solo</h3>
+        <p style="font-family: 'Geist', sans-serif; font-size: 14px; line-height: 1.5; color: #4a2548; margin: 0 0 24px;">For one drinker, one method. We pick the week's best for your brew.</p>
+
+        <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 24px;">
+          <div style="font-family: 'Bagel Fat One', cursive; font-size: 56px; color: #2a0f3a; line-height: 1;">$24</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6b2d8c;">/ delivery</div>
+        </div>
+
+        <ul style="list-style: none; padding: 0; margin: 0 0 32px; font-family: 'Geist', sans-serif; font-size: 14px; color: #2a0f3a; line-height: 1.8;">
+          <li>◯ 250g whole bean</li>
+          <li>◯ Tasting card included</li>
+          <li>◯ Every 14 days</li>
+          <li>◯ Free shipping</li>
+        </ul>
+
+        <a href="#" style="display: block; background: #2a0f3a; color: #ffe2ef; padding: 16px; border-radius: 999px; text-align: center; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 14px;">Start solo →</a>
+      </div>
+
+      <!-- Couple (featured) -->
+      <div style="background: #e8649a; border-radius: 8px; padding: 36px 28px; position: relative; transform: scale(1.04); box-shadow: 0 32px 64px -24px rgba(74, 31, 94, 0.4);">
+        <div style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: #2a0f3a; color: #ec9cc1; padding: 8px 20px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;">✺ Most picked</div>
+
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #2a0f3a; margin-bottom: 12px;">— 2 bags / week</div>
+        <h3 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 56px; line-height: 1; margin: 0 0 8px; color: #2a0f3a;">Pair</h3>
+        <p style="font-family: 'Geist', sans-serif; font-size: 14px; line-height: 1.5; color: #2a0f3a; margin: 0 0 24px;">Two methods, two bags. One for the morning ritual, one for the slow weekend.</p>
+
+        <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 24px;">
+          <div style="font-family: 'Bagel Fat One', cursive; font-size: 56px; color: #2a0f3a; line-height: 1;">$44</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #4a1f5e;">/ delivery</div>
+        </div>
+
+        <ul style="list-style: none; padding: 0; margin: 0 0 32px; font-family: 'Geist', sans-serif; font-size: 14px; color: #2a0f3a; line-height: 1.8;">
+          <li>◉ 2 × 250g whole bean</li>
+          <li>◉ One espresso, one filter</li>
+          <li>◉ Every 7 days</li>
+          <li>◉ Brew guide cards + free shipping</li>
+        </ul>
+
+        <a href="#" style="display: block; background: #2a0f3a; color: #ffe2ef; padding: 16px; border-radius: 999px; text-align: center; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 14px;">Pair up →</a>
+      </div>
+
+      <!-- Four Shots (full club) -->
+      <div style="background: #4a1f5e; color: #ffe2ef; border-radius: 8px; padding: 36px 28px; position: relative;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #ec9cc1; margin-bottom: 12px;">— 4 bags / month</div>
+        <h3 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 56px; line-height: 1; margin: 0 0 8px; color: #ffe2ef;">Four Shots</h3>
+        <p style="font-family: 'Geist', sans-serif; font-size: 14px; line-height: 1.5; color: #d4b8c8; margin: 0 0 24px;">The full deck — every single-origin we roast that month, plus first dibs on micro-lots.</p>
+
+        <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 24px;">
+          <div style="font-family: 'Bagel Fat One', cursive; font-size: 56px; color: #ffe2ef; line-height: 1;">$88</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #ec9cc1;">/ month</div>
+        </div>
+
+        <ul style="list-style: none; padding: 0; margin: 0 0 32px; font-family: 'Geist', sans-serif; font-size: 14px; color: #ffe2ef; line-height: 1.8;">
+          <li>✺ 4 × 250g whole bean</li>
+          <li>✺ All week's origins</li>
+          <li>✺ First-dibs micro-lots</li>
+          <li>✺ Members-only Tuesday cupping</li>
+        </ul>
+
+        <a href="#" style="display: block; background: #e8649a; color: #2a0f3a; padding: 16px; border-radius: 999px; text-align: center; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 14px;">Join the club →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNAL ============ -->
+<section data-screen-label="Journal" id="journal" style="padding: 120px 48px; background: #f7c5da;">
+  <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 64px;">
+    <div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #4a1f5e; margin-bottom: 24px;">— § 05 / Journal</div>
+      <h2 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 96px; line-height: 0.95; letter-spacing: -0.005em; margin: 0; color: #2a0f3a;">
+        Field<br>notes.
+      </h2>
+    </div>
+    <a href="#" style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 14px; color: #2a0f3a; border-bottom: 2px solid #2a0f3a; padding-bottom: 4px;">Read everything →</a>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+    <!-- Article 1 -->
+    <a href="#" style="background: #ffe2ef; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; min-height: 460px;">
+      <div style="aspect-ratio: 4 / 3; background: repeating-linear-gradient(135deg, #b54d83 0 6px, #9c3568 6px 12px); border-radius: 4px; margin-bottom: 24px; position: relative;">
+        <div style="position: absolute; bottom: 12px; left: 12px; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #ffe2ef;">◐ IMG / boquete farm</div>
+      </div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #b54d83; margin-bottom: 12px;">Origin · 6 min read</div>
+      <h3 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 32px; line-height: 1.05; margin: 0 0 12px; color: #2a0f3a;">A week at the Gesha farm in Boquete</h3>
+      <p style="font-family: 'Geist', sans-serif; font-size: 14px; line-height: 1.55; color: #4a2548; margin: 0;">Why this lot tasted like raspberry the moment we cracked the sample bag.</p>
+    </a>
+
+    <!-- Article 2 -->
+    <a href="#" style="background: #ffe2ef; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; min-height: 460px;">
+      <div style="aspect-ratio: 4 / 3; background: linear-gradient(180deg, #ec9cc1 0%, #e8649a 100%); border-radius: 4px; margin-bottom: 24px; position: relative; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 50%; aspect-ratio: 1; background: radial-gradient(circle at 30% 30%, #ffe2ef, #b54d83 70%, #4a1f5e); border-radius: 50%;"></div>
+        <div style="position: absolute; bottom: 12px; left: 12px; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #2a0f3a;">◯ IMG / shot in glass</div>
+      </div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #b54d83; margin-bottom: 12px;">Craft · 4 min read</div>
+      <h3 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 32px; line-height: 1.05; margin: 0 0 12px; color: #2a0f3a;">Why we pull at 26 seconds (and not 28)</h3>
+      <p style="font-family: 'Geist', sans-serif; font-size: 14px; line-height: 1.55; color: #4a2548; margin: 0;">The two-second window where everything sweet stops being sweet.</p>
+    </a>
+
+    <!-- Article 3 -->
+    <a href="#" style="background: #ffe2ef; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; min-height: 460px;">
+      <div style="aspect-ratio: 4 / 3; background: #2a0f3a; border-radius: 4px; margin-bottom: 24px; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="assets/fourshots-logo.jpeg" style="width: 70%; mix-blend-mode: screen; filter: contrast(1.5);">
+        <div style="position: absolute; bottom: 12px; left: 12px; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #ec9cc1;">◐ IMG / brand close up</div>
+      </div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #b54d83; margin-bottom: 12px;">Brand · 3 min read</div>
+      <h3 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 32px; line-height: 1.05; margin: 0 0 12px; color: #2a0f3a;">Why the walls are pink, since you asked</h3>
+      <p style="font-family: 'Geist', sans-serif; font-size: 14px; line-height: 1.55; color: #4a2548; margin: 0;">A short history of how we landed on Petal #F7C5DA and never looked back.</p>
+    </a>
+  </div>
+</section>
+
+<!-- ============ VISIT / LOCATIONS ============ -->
+<section data-screen-label="Visit" id="visit" style="padding: 120px 48px; background: #2a0f3a; color: #f4ecde;">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+    <!-- Map placeholder -->
+    <div style="position: relative; aspect-ratio: 5 / 4; background: #4a1f5e; border-radius: 8px; overflow: hidden;">
+      <!-- Grid pattern -->
+      <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(247,197,218,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(247,197,218,0.08) 1px, transparent 1px); background-size: 32px 32px;"></div>
+      <!-- Roads -->
+      <div style="position: absolute; top: 30%; left: 0; right: 0; height: 6px; background: rgba(247,197,218,0.18);"></div>
+      <div style="position: absolute; top: 65%; left: 0; right: 0; height: 6px; background: rgba(247,197,218,0.18);"></div>
+      <div style="position: absolute; left: 25%; top: 0; bottom: 0; width: 6px; background: rgba(247,197,218,0.18);"></div>
+      <div style="position: absolute; left: 70%; top: 0; bottom: 0; width: 6px; background: rgba(247,197,218,0.18);"></div>
+
+      <!-- Pins -->
+      <div style="position: absolute; top: 28%; left: 22%; width: 32px; height: 32px; background: #e8649a; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 3px solid #2a0f3a;"></div>
+      <div style="position: absolute; top: 63%; left: 67%; width: 32px; height: 32px; background: #e8649a; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 3px solid #2a0f3a;"></div>
+
+      <!-- Corner caption -->
+      <div style="position: absolute; bottom: 16px; right: 16px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #ec9cc1;">◐ MAP / replace with embed</div>
+    </div>
+
+    <!-- Right: location cards -->
+    <div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #ec9cc1; margin-bottom: 24px;">— § 06 / Find us</div>
+      <h2 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 84px; line-height: 0.95; letter-spacing: -0.005em; margin: 0 0 40px; color: #ffe2ef;">
+        Two bars,<br><span style="color: #e8649a;">one obsession.</span>
+      </h2>
+
+      <!-- Location 1 -->
+      <div style="background: #4a1f5e; border-radius: 6px; padding: 24px; margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+          <div>
+            <div style="font-family: 'Bagel Fat One', cursive; font-size: 32px; color: #ffe2ef; line-height: 1; margin-bottom: 8px;">Roastery — Pink Lane</div>
+            <p style="font-family: 'Geist', sans-serif; font-size: 14px; color: #d4b8c8; margin: 0 0 12px;">42 Pink Lane, East Side. Roasting Tuesdays — drop by for the smell alone.</p>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #ec9cc1; letter-spacing: 0.04em;">07:00 — 17:00 · Mon–Sat</div>
+          </div>
+          <a href="#" style="background: #e8649a; color: #2a0f3a; padding: 10px 16px; border-radius: 999px; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 13px; white-space: nowrap;">Directions →</a>
+        </div>
+      </div>
+
+      <!-- Location 2 -->
+      <div style="background: #4a1f5e; border-radius: 6px; padding: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+          <div>
+            <div style="font-family: 'Bagel Fat One', cursive; font-size: 32px; color: #ffe2ef; line-height: 1; margin-bottom: 8px;">The Bar — Old Town</div>
+            <p style="font-family: 'Geist', sans-serif; font-size: 14px; color: #d4b8c8; margin: 0 0 12px;">9 Mercer St. Espresso bar only — three stools and a view of the lever.</p>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #ec9cc1; letter-spacing: 0.04em;">08:00 — 16:00 · Daily</div>
+          </div>
+          <a href="#" style="background: #e8649a; color: #2a0f3a; padding: 10px 16px; border-radius: 999px; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 13px; white-space: nowrap;">Directions →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section data-screen-label="Newsletter" style="padding: 96px 48px; background: #e8649a; color: #2a0f3a;">
+  <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center;">
+    <div>
+      <h2 style="font-family: 'Bagel Fat One', cursive; font-weight: 400; font-size: 108px; line-height: 0.9; letter-spacing: -0.01em; margin: 0; color: #2a0f3a;">
+        New roast<br>in your inbox<br>before <span style="color: #ffe2ef;">9am.</span>
+      </h2>
+    </div>
+
+    <div>
+      <p style="font-family: 'Geist', sans-serif; font-size: 17px; line-height: 1.6; margin: 0 0 32px; max-width: 420px;">
+        One email, every Friday morning. New origins, the tasting notes, and the brew recipe before everyone else gets to it.
+      </p>
+
+      <form style="display: flex; gap: 8px; background: #ffe2ef; padding: 8px; border-radius: 999px; max-width: 460px;">
+        <input type="email" placeholder="hello@yourname.com" style="flex: 1; background: transparent; border: 0; outline: none; padding: 14px 20px; font-family: 'Geist', sans-serif; font-size: 15px; color: #2a0f3a;">
+        <button type="button" style="background: #2a0f3a; color: #ffe2ef; border: 0; padding: 14px 24px; border-radius: 999px; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 14px; cursor: pointer;">Pour me one →</button>
+      </form>
+
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #4a1f5e; margin-top: 16px; letter-spacing: 0.04em;">No spam. Unsub in one tap. Pinky promise.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer data-screen-label="Footer" style="padding: 80px 48px 40px; background: #1a0a24; color: #ec9cc1;">
+  <!-- Top: big mark + columns -->
+  <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 64px; border-bottom: 1px solid rgba(232, 156, 193, 0.2);">
+    <div>
+      <img src="assets/fourshots-logo.jpeg" style="height: 60px; margin-bottom: 24px;">
+      <p style="font-family: 'Geist', sans-serif; font-size: 14px; line-height: 1.6; color: #d4b8c8; max-width: 300px; margin: 0;">
+        FourShots Specialty Coffee Co. A small, pink-soaked roastery making espresso the way it should be.
+      </p>
+      <div style="display: flex; gap: 12px; margin-top: 24px;">
+        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: #4a1f5e; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ffe2ef;">IG</a>
+        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: #4a1f5e; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ffe2ef;">YT</a>
+        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: #4a1f5e; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ffe2ef;">TT</a>
+        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: #4a1f5e; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ffe2ef;">SP</a>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #e8649a; margin-bottom: 16px;">— Shop</div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-family: 'Geist', sans-serif; font-size: 14px;">
+        <a href="#">Single origins</a>
+        <a href="#">Blends</a>
+        <a href="#">Subscriptions</a>
+        <a href="#">Gear &amp; merch</a>
+        <a href="#">Gift cards</a>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #e8649a; margin-bottom: 16px;">— The Brand</div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-family: 'Geist', sans-serif; font-size: 14px;">
+        <a href="#">Our story</a>
+        <a href="#">Sourcing</a>
+        <a href="#">Wholesale</a>
+        <a href="#">Press</a>
+        <a href="#">Careers</a>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #e8649a; margin-bottom: 16px;">— Help</div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-family: 'Geist', sans-serif; font-size: 14px;">
+        <a href="#">Brew guides</a>
+        <a href="#">Shipping &amp; returns</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contact</a>
+        <a href="#">hello@fourshots.co</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Giant wordmark -->
+  <div style="margin: 64px 0; text-align: center;">
+    <div style="font-family: 'Bagel Fat One', cursive; font-size: 240px; line-height: 0.9; letter-spacing: -0.02em; color: transparent; -webkit-text-stroke: 2px #4a1f5e;">FourShots</div>
+  </div>
+
+  <!-- Bottom row -->
+  <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #b88aa0;">
+    <span>© 2026 FourShots Coffee Co. — Roasted with love, served with attitude.</span>
+    <div style="display: flex; gap: 24px;">
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+</body>
+</html>

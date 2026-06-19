@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --color-cream: #f4ecde;
+  --color-buff: #e6d8c2;
+  --color-blush: #ffe2ef;
+  --color-petal: #f7c5da;
+  --color-bubblegum: #f0a5c9;
+  --color-rose: #ec9cc1;
+  --color-hotpink: #e8649a;
+  --color-berry: #b54d83;
+  --color-magenta: #9c3568;
+  --color-grape: #6b2d8c;
+  --color-plum: #4a1f5e;
+  --color-aubergine: #4a1f5e;
+  --color-espresso: #2a0f3a;
+  --color-ink: #1a0a24;
+}
+
+@theme inline {
+  --color-cream: var(--color-cream);
+  --color-buff: var(--color-buff);
+  --color-blush: var(--color-blush);
+  --color-petal: var(--color-petal);
+  --color-bubblegum: var(--color-bubblegum);
+  --color-rose: var(--color-rose);
+  --color-hotpink: var(--color-hotpink);
+  --color-berry: var(--color-berry);
+  --color-magenta: var(--color-magenta);
+  --color-grape: var(--color-grape);
+  --color-plum: var(--color-plum);
+  --color-espresso: var(--color-espresso);
+  --color-ink: var(--color-ink);
+
+  --font-display: var(--font-bagel), cursive;
+  --font-sans: var(--font-geist), system-ui, sans-serif;
+  --font-mono: var(--font-jbmono), monospace;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-cream);
+}
+
+body {
+  color: var(--color-espresso);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-hotpink);
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.stroke-outline {
+  -webkit-text-stroke: 6px var(--color-plum);
+  paint-order: stroke fill;
+  color: #fff;
+}
+
+@keyframes wipe-out {
+  from {
+    clip-path: circle(150% at 50% 50%);
+  }
+  to {
+    clip-path: circle(0% at 50% 50%);
+  }
+}

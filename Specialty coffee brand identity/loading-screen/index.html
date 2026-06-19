@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FourShots — Loading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Geist:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f4ecde;
+    --ink:#2a0f3a;
+    --plum:#4a1f5e;
+    --grape:#6b2d8c;
+    --hotpink:#e8649a;
+    --rose:#ec9cc1;
+    --petal:#f7c5da;
+    --blush:#ffe2ef;
+    --berry:#b54d83;
+    --void:#1a0a24;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:var(--cream); overflow-x:hidden; }
+  body{ font-family:'Geist', system-ui, sans-serif; color:var(--ink); }
+
+  /* ============ LOADER ============ */
+  #loader{
+    position:fixed; inset:0; z-index:1000;
+    display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(circle at 50% 38%, var(--petal) 0%, var(--cream) 72%);
+    overflow:hidden;
+  }
+
+  #loader::before, #loader::after{
+    content:""; position:absolute; border-radius:50%; pointer-events:none;
+  }
+  #loader::before{ top:14%; left:12%; width:26px; height:26px; background:var(--hotpink); }
+  #loader::after{ bottom:16%; right:14%; width:34px; height:34px; background:var(--grape); }
+
+  .loader-stage{
+    position:relative; z-index:2;
+    display:flex; flex-direction:column; align-items:center; gap:28px;
+  }
+
+  .ball-wrap{
+    position:relative; width:230px; height:230px;
+  }
+  .ball-wrap canvas{ display:block; width:100%; height:100%; }
+
+  .ball-glow{
+    position:absolute; inset:-30%;
+    background:radial-gradient(circle, rgba(232,100,154,0.35) 0%, rgba(232,100,154,0) 70%);
+    z-index:-1; filter:blur(6px);
+  }
+
+  .loader-word{
+    font-family:'Bagel Fat One', cursive;
+    font-weight:400;
+    font-size:56px;
+    line-height:0.95;
+    text-align:center;
+    color:var(--ink);
+    margin:0;
+  }
+  .loader-word .stroke{
+    color:#ffffff;
+    -webkit-text-stroke:3px var(--plum);
+    paint-order:stroke fill;
+  }
+
+  .loader-ticker{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--berry);
+    height:16px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .loader-ticker .dot{
+    width:6px; height:6px; border-radius:50%; background:var(--hotpink);
+    box-shadow:0 0 0 3px rgba(232,100,154,0.25);
+  }
+  .loader-ticker span.label{ display:inline-block; }
+
+  .progress-track{
+    width:220px; height:10px;
+    background:var(--ink);
+    border-radius:999px;
+    overflow:hidden;
+    position:relative;
+  }
+  .progress-fill{
+    width:0%; height:100%;
+    background:linear-gradient(90deg, var(--hotpink), var(--rose));
+    border-radius:999px;
+  }
+  .progress-row{
+    display:flex; align-items:center; gap:14px;
+  }
+  .progress-pct{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    color:var(--ink);
+    min-width:38px;
+    text-align:right;
+  }
+
+  .shot-counter{
+    display:flex; gap:8px;
+  }
+  .shot-counter .pip{
+    width:9px; height:9px; border-radius:50%;
+    border:1.5px solid var(--ink);
+    background:transparent;
+  }
+  .shot-counter .pip.filled{
+    background:var(--ink);
+  }
+
+  /* circular wipe mask applied to the whole loader on exit */
+  #loader.wipe{
+    animation:wipe-out 0.9s cubic-bezier(.65,0,.35,1) forwards;
+  }
+  @keyframes wipe-out{
+    from{ clip-path:circle(150% at 50% 50%); }
+    to{ clip-path:circle(0% at 50% 50%); }
+  }
+
+  /* ============ PLACEHOLDER SITE ============ */
+  #site{
+    min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    flex-direction:column; gap:24px;
+    background:linear-gradient(180deg, #f7c5da 0%, #f0a5c9 100%);
+    text-align:center;
+    padding:48px;
+    opacity:0;
+  }
+  #site img{ width:88px; height:88px; }
+  #site h1{
+    font-family:'Bagel Fat One', cursive;
+    font-weight:400;
+    font-size:clamp(48px, 9vw, 120px);
+    line-height:0.95;
+    margin:0;
+    color:var(--ink);
+  }
+  #site p{
+    font-family:'Geist', sans-serif;
+    font-size:16px;
+    color:var(--plum);
+    max-width:420px;
+    margin:0;
+  }
+  #replay{
+    margin-top:8px;
+    background:var(--ink);
+    color:var(--blush);
+    border:0;
+    padding:14px 28px;
+    border-radius:999px;
+    font-family:'Geist', sans-serif;
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+  }
+  #replay:hover{ background:var(--plum); }
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="loader-stage">
+    <div class="ball-wrap">
+      <div class="ball-glow"></div>
+      <canvas id="ball-canvas"></canvas>
+    </div>
+
+    <h1 class="loader-word">Four shots.<br><span class="stroke">Nothing less.</span></h1>
+
+    <div class="loader-ticker">
+      <span class="dot"></span>
+      <span class="label" id="ticker-label">Pulling first shot…</span>
+    </div>
+
+    <div class="progress-row">
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="progress-pct" id="progress-pct">0%</div>
+    </div>
+
+    <div class="shot-counter" id="shot-counter">
+      <span class="pip"></span>
+      <span class="pip"></span>
+      <span class="pip"></span>
+      <span class="pip"></span>
+    </div>
+  </div>
+</div>
+
+<div id="site">
+  <img src="assets/fourshots-logo-transparent.png" alt="FourShots">
+  <h1>You're in.</h1>
+  <p>A pink-soaked specialty roastery in the corner of your morning. The loading screen above is the espresso warm-up — this is the rest of the site.</p>
+  <button id="replay">Replay loader →</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script type="module">
+  import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+
+  const canvas = document.getElementById('ball-canvas');
+  const size = 230;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
+  camera.position.set(0, 0, 4.2);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(size, size);
+
+  const geometry = new THREE.SphereGeometry(1.15, 64, 64);
+  const texture = new THREE.TextureLoader().load('assets/shot-ball.png');
+  texture.colorSpace = THREE.SRGBColorSpace;
+
+  const material = new THREE.MeshStandardMaterial({
+    map: texture,
+    metalness: 0.65,
+    roughness: 0.22,
+    emissive: new THREE.Color('#4a1f5e'),
+    emissiveIntensity: 0.08
+  });
+
+  const ball = new THREE.Mesh(geometry, material);
+  scene.add(ball);
+
+  scene.add(new THREE.AmbientLight('#ffe2ef', 0.55));
+
+  const pinkLight = new THREE.PointLight('#e8649a', 18, 12);
+  const purpleLight = new THREE.PointLight('#6b2d8c', 14, 12);
+  const creamRim = new THREE.PointLight('#f4ecde', 6, 12);
+  creamRim.position.set(-3, 1, 2);
+  scene.add(pinkLight, purpleLight, creamRim);
+
+  let spinSpeed = 0.012;
+  let clock = 0;
+  let raf = null;
+
+  function animate() {
+    raf = requestAnimationFrame(animate);
+    clock += 0.016;
+
+    ball.rotation.y += spinSpeed;
+    ball.rotation.x = Math.sin(clock * 0.3) * 0.08;
+
+    pinkLight.position.set(Math.cos(clock * 0.9) * 3, Math.sin(clock * 0.6) * 2, 2.4);
+    purpleLight.position.set(Math.cos(clock * 0.6 + Math.PI) * 3, Math.cos(clock * 0.5) * 2, -2.2);
+
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  // ---- loading sequence ----
+  const tickerEl = document.getElementById('ticker-label');
+  const fillEl = document.getElementById('progress-fill');
+  const pctEl = document.getElementById('progress-pct');
+  const pips = document.querySelectorAll('.shot-counter .pip');
+  const loaderEl = document.getElementById('loader');
+  const siteEl = document.getElementById('site');
+
+  const tickerLines = [
+    'Pulling first shot…',
+    'Pulling second shot…',
+    'Pulling third shot…',
+    'Pulling fourth shot — nothing less.'
+  ];
+
+  function setTicker(pct) {
+    const idx = Math.min(3, Math.floor(pct / 25));
+    tickerEl.textContent = tickerLines[idx];
+    pips.forEach((pip, i) => pip.classList.toggle('filled', i <= idx && pct > i * 25));
+  }
+
+  function runLoader() {
+    loaderEl.classList.remove('wipe');
+    loaderEl.style.display = 'flex';
+    loaderEl.style.clipPath = 'circle(150% at 50% 50%)';
+    siteEl.style.opacity = 0;
+    if (!raf) animate();
+
+    const progress = { value: 0 };
+    spinSpeed = 0.012;
+
+    gsap.timeline()
+      .to(progress, {
+        value: 100,
+        duration: 3.1,
+        ease: 'power1.inOut',
+        onUpdate: () => {
+          const pct = Math.round(progress.value);
+          fillEl.style.width = pct + '%';
+          pctEl.textContent = pct + '%';
+          setTicker(pct);
+          spinSpeed = 0.012 + (pct / 100) * 0.05;
+        }
+      })
+      .to({}, {
+        duration: 0.5,
+        onStart: () => gsap.to({}, { duration: 0.5, onUpdate: function () {
+          spinSpeed = 0.06 + this.progress() * 0.25;
+        }})
+      })
+      .add(() => loaderEl.classList.add('wipe'))
+      .to(siteEl, { opacity: 1, duration: 0.6, ease: 'power2.out' }, '-=0.3')
+      .add(() => {
+        loaderEl.style.display = 'none';
+        cancelAnimationFrame(raf);
+        raf = null;
+      });
+  }
+
+  document.getElementById('replay').addEventListener('click', runLoader);
+
+  runLoader();
+</script>
+</body>
+</html>

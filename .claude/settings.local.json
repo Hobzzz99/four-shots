@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell *)",
+      "Bash(python3 -c ' *)",
+      "Bash(mkdir -p \"E:/four shots/Specialty coffee brand identity/loading-screen/assets\")",
+      "Bash(cp \"C:/Users/DELL/Downloads/extracted_logo.png\" \"E:/four shots/Specialty coffee brand identity/loading-screen/assets/shot-ball.png\")",
+      "Bash(npx --version)",
+      "Skill(run)",
+      "Bash(timeout 90 npx --yes playwright@1.49.0 screenshot --viewport-size=900,700 --wait-for-timeout=2500 http://localhost:4173 /tmp/loader1.png)",
+      "Bash(npx --yes playwright@1.49.0 install chromium)",
+      "Bash(npx --yes playwright@1.49.0 screenshot --viewport-size=900,700 --wait-for-timeout=2500 http://localhost:4173 /tmp/loader1.png)",
+      "Bash(npx --yes playwright@1.49.0 screenshot --viewport-size=900,700 --wait-for-timeout=6000 http://localhost:4173 /tmp/loader2.png)",
+      "Bash(npm -v)",
+      "Bash(npx --yes create-next-app@latest website --ts --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
+      "Bash(mkdir -p \"E:/four shots/website/public/images\")",
+      "Bash(cp \"E:/four shots/Specialty coffee brand identity/assets/fourshots-logo-transparent.png\" \"E:/four shots/website/public/images/\")",
+      "Bash(cp \"E:/four shots/Specialty coffee brand identity/assets/fourshots-logo.jpeg\" \"E:/four shots/website/public/images/\")",
+      "Bash(node -e \"const fonts=require\\('next/dist/compiled/@next/font/dist/google/index.js'\\); \")",
+      "Bash(node -e \"console.log\\(Object.keys\\(require\\('next/font/google'\\)\\)\\)\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Read(//tmp/**)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/ -o /tmp/home.html)",
+      "Bash(curl -s \"http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__0_1xa45._.css\" -o /tmp/site.css)",
+      "Bash(curl *)",
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //PID 29500 //F)",
+      "Skill(run:*)",
+      "Bash(find / -iname \"*chromium-cli*\" 2>/dev/null | head -20)",
+      "Read(//e//**)",
+      "Bash(cat /c/Users/DELL/AppData/Local/Temp/claude/e--four-shots/3f9a31c0-6a74-43d1-8bc3-0bd7b9bd68c2/tasks/brgm8kjgy.output 2>/dev/null | head -20)",
+      "Read(//c/Users/DELL/AppData/Local/Temp/claude/e--four-shots/3f9a31c0-6a74-43d1-8bc3-0bd7b9bd68c2/tasks/**)",
+      "PowerShell(Start-Process \"chrome.exe\" -ArgumentList \"--incognito\",\"http://localhost:3000\")"
+    ]
+  }
+}
